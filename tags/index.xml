@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Caleb Harper</title>
-    <link>https://calebharper.win/tags/</link>
+    <link>https://calebharper.github.io/tags/</link>
     <description>Recent content in Tags on Caleb Harper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Jan 2018 08:49:37 -0600</lastBuildDate>
     
-	<atom:link href="https://calebharper.win/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://calebharper.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Neuling</title>
-      <link>https://calebharper.win/tags/neuling/</link>
+      <link>https://calebharper.github.io/tags/neuling/</link>
       <pubDate>Mon, 22 Jan 2018 08:49:37 -0600</pubDate>
       
-      <guid>https://calebharper.win/tags/neuling/</guid>
+      <guid>https://calebharper.github.io/tags/neuling/</guid>
       <description></description>
     </item>
     

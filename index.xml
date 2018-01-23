@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Caleb Harper</title>
-    <link>https://calebharper.win/</link>
+    <link>https://calebharper.github.io/</link>
     <description>Recent content on Caleb Harper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Jan 2018 08:49:37 -0600</lastBuildDate>
     
-	<atom:link href="https://calebharper.win/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://calebharper.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello</title>
-      <link>https://calebharper.win/posts/a-brief-dive-into-helloworld/</link>
+      <link>https://calebharper.github.io/posts/a-brief-dive-into-helloworld/</link>
       <pubDate>Mon, 22 Jan 2018 08:49:37 -0600</pubDate>
       
-      <guid>https://calebharper.win/posts/a-brief-dive-into-helloworld/</guid>
+      <guid>https://calebharper.github.io/posts/a-brief-dive-into-helloworld/</guid>
       <description>&lt;p&gt;I want to kick this new blog off in style!  If I was learning a new programming
 language, the firstest&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; program would be helloworld (abbreviated hellow).
 But what is the hellow equivalent for the blog scape?  Is there one?  Where did
@@ -27,37 +27,37 @@ hellow even come from?&lt;/p&gt;
     
     <item>
       <title>About</title>
-      <link>https://calebharper.win/pages/about/</link>
+      <link>https://calebharper.github.io/pages/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://calebharper.win/pages/about/</guid>
+      <guid>https://calebharper.github.io/pages/about/</guid>
       <description>About me and things that I like</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>https://calebharper.win/pages/contact/</link>
+      <link>https://calebharper.github.io/pages/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://calebharper.win/pages/contact/</guid>
+      <guid>https://calebharper.github.io/pages/contact/</guid>
       <description>How to contact me</description>
     </item>
     
     <item>
       <title>FAQ</title>
-      <link>https://calebharper.win/pages/faq/</link>
+      <link>https://calebharper.github.io/pages/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://calebharper.win/pages/faq/</guid>
+      <guid>https://calebharper.github.io/pages/faq/</guid>
       <description>Questions?</description>
     </item>
     
     <item>
       <title>Resume</title>
-      <link>https://calebharper.win/pages/resume/</link>
+      <link>https://calebharper.github.io/pages/resume/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://calebharper.win/pages/resume/</guid>
+      <guid>https://calebharper.github.io/pages/resume/</guid>
       <description>Under Construction</description>
     </item>
     
