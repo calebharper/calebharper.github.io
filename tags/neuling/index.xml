@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neuling on Caleb Harper</title>
+    <link>https://calebharper.win/tags/neuling/</link>
+    <description>Recent content in Neuling on Caleb Harper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Jan 2018 08:49:37 -0600</lastBuildDate>
+    
+	<atom:link href="https://calebharper.win/tags/neuling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello</title>
+      <link>https://calebharper.win/posts/a-brief-dive-into-helloworld/</link>
+      <pubDate>Mon, 22 Jan 2018 08:49:37 -0600</pubDate>
+      
+      <guid>https://calebharper.win/posts/a-brief-dive-into-helloworld/</guid>
+      <description>&lt;p&gt;I want to kick this new blog off in style!  If I was learning a new programming
+language, the firstest&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; program would be helloworld (abbreviated hellow).
+But what is the hellow equivalent for the blog scape?  Is there one?  Where did
+hellow even come from?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
