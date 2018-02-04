@@ -6,15 +6,24 @@
     <description>Recent content in Tags on Caleb Harper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jan 2018 08:49:37 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 04 Feb 2018 12:09:57 -0600</lastBuildDate>
     
 	<atom:link href="https://calebharper.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Go</title>
+      <link>https://calebharper.github.io/tags/go/</link>
+      <pubDate>Sun, 04 Feb 2018 12:09:57 -0600</pubDate>
+      
+      <guid>https://calebharper.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Neuling</title>
       <link>https://calebharper.github.io/tags/neuling/</link>
-      <pubDate>Mon, 22 Jan 2018 08:49:37 -0600</pubDate>
+      <pubDate>Sun, 04 Feb 2018 12:09:57 -0600</pubDate>
       
       <guid>https://calebharper.github.io/tags/neuling/</guid>
       <description></description>

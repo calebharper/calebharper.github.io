@@ -6,10 +6,24 @@
     <description>Recent content on Caleb Harper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jan 2018 08:49:37 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 04 Feb 2018 12:09:57 -0600</lastBuildDate>
     
 	<atom:link href="https://calebharper.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gotool</title>
+      <link>https://calebharper.github.io/posts/go-tool-introduction-/</link>
+      <pubDate>Sun, 04 Feb 2018 12:09:57 -0600</pubDate>
+      
+      <guid>https://calebharper.github.io/posts/go-tool-introduction-/</guid>
+      <description>&lt;p&gt;The old adage is &amp;ldquo;a poor craftsman blames his/her tools.&amp;rdquo;  The golang tools
+should never suffer such defacements; they are simply sublime.  However, even
+the fanciest (or for that matter simplest) hammer can mash a finger if used
+improperly&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hello</title>

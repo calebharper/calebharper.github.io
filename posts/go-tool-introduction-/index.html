@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Calebs doings and dontings">
+<meta name="keywords" content="Go, Code, Tutorial">
+<meta name="author" content="Caleb Harper">
+<meta name="generator" content="Hugo 0.33-DEV" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://calebharper.github.io/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="https://calebharper.github.io/index.xml" type="application/rss+xml" title="Caleb Harper">
+<title>Gotool - Caleb Harper</title>
+</head>
+<body>
+
+<header>
+  <nav class="fixed-nav-bar">
+      <div class="container clearfix">
+        <a class="path" href="https://calebharper.github.io/">[Caleb Harper]</a>
+        <div class="right">
+          
+            
+              
+                <a class="path" 
+                  href="/pages/about/"
+                  >
+                  About</a>
+            
+          
+            
+              |
+                <a class="path" 
+                  href="/pages/contact/"
+                  >
+                  Contact</a>
+            
+          
+            
+              |
+                <a class="path" 
+                  href="/pages/faq/"
+                  >
+                  FAQ</a>
+            
+          
+            
+          
+            
+              |
+                <a class="path" 
+                  href="/pages/resume/"
+                  >
+                  Resume</a>
+            
+          
+        
+         
+           |
+           <a class="path"
+              href="https://calebharper.github.io/categories/blog">
+             Blog</a>
+          
+        
+        </div>
+      </div>
+  </nav>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2018-02-04">February 04, 2018</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="https://calebharper.github.io/categories/blog">blog</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="https://calebharper.github.io/tags/neuling">neuling</a>
+
+        <a href="https://calebharper.github.io/tags/go">go</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">Gotool</h1>
+  <section class="body" itemprop="articleBody">
+    <p>The old adage is &ldquo;a poor craftsman blames his/her tools.&rdquo;  The golang tools
+should never suffer such defacements; they are simply sublime.  However, even
+the fanciest (or for that matter simplest) hammer can mash a finger if used
+improperly</p>
+
+<p></p>
+
+<p>In the next few posts, I&rsquo;m going to do a shaleep<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> dive into the <a href="https://golang.org/cmd/go">go
+tool</a>.  If you&rsquo;ve played with the go tool, you know
+a lot of functionality is baked in.  If you haven&rsquo;t played with the go tool
+very much, stay tuned!  We&rsquo;re about to undertake a whirlwind tour of the tools,
+but first a disclaimer:</p>
+
+<h2 id="disclaimer">Disclaimer</h2>
+
+<p>I am not claiming (nor desiring) to be the absolute truth on the go tool.
+Rather consider this collection of recollections one person&rsquo;s journey down
+the rabbit hole.   If I have something incorrect or misrepresented, please send
+me a message so I can address the problem(s).  By doing so, in some small
+incremental way, you will have helped advanced the whole of humanity.  Wouldn&rsquo;t
+that feel nice?</p>
+
+<h2 id="go-version">go version</h2>
+
+<p>Right, so you&rsquo;ve just <a href="https://golang.org/doc/install">installed go</a>, and your
+anticipation is reminiscent of opening presents on Christmas morning.  You just
+can&rsquo;t wait to get out there and write your first micro platform distributed
+cloud as a service (or whatever it is kids these days are doing).  But let&rsquo;s
+pause for just a second and reflect.  Open up your terminal, and type <em>go
+version</em>.  My output is below, yours will likely vary from mine:</p>
+
+<pre><code class="language-sh">$ go version
+go version go1.9.2 linux/amd64
+</code></pre>
+
+<p>Does this command work?  Is it the version you expected?  Once we&rsquo;ve done
+something, it&rsquo;s usually worth checking we actually did what we meant to do. (or
+done-did-do as I like to put it)</p>
+
+<h2 id="go-env">go env</h2>
+
+<p>The next command to look at is <em>go env</em>.  It isn&rsquo;t as flashy as some of the
+other go tools, important nonetheless.  It lets you know exactly how your go
+installation is configured.  Again mine is below, yours will likely vary</p>
+
+<pre><code class="language-sh">$ go env
+GOARCH=&quot;amd64&quot;
+GOBIN=&quot;/home/harpercn/devel/go/bin&quot;
+GOEXE=&quot;&quot;
+GOHOSTARCH=&quot;amd64&quot;
+GOHOSTOS=&quot;linux&quot;
+GOOS=&quot;linux&quot;
+GOPATH=&quot;/home/harpercn/devel/go&quot;
+GORACE=&quot;&quot;
+GOROOT=&quot;/opt/go&quot;
+GOTOOLDIR=&quot;/opt/go/pkg/tool/linux_amd64&quot;
+GCCGO=&quot;gccgo&quot;
+CC=&quot;gcc&quot;
+GOGCCFLAGS=&quot;-fPIC -m64 -pthread -fmessage-length=0
+-fdebug-prefix-map=/tmp/go-build737507707=/tmp/go-build
+-gno-record-gcc-switches&quot;
+CXX=&quot;g++&quot;
+CGO_ENABLED=&quot;1&quot;
+CGO_CFLAGS=&quot;-g -O2&quot;
+CGO_CPPFLAGS=&quot;&quot;
+CGO_CXXFLAGS=&quot;-g -O2&quot;
+CGO_FFLAGS=&quot;-g -O2&quot;
+CGO_LDFLAGS=&quot;-g -O2&quot;
+PKG_CONFIG=&quot;pkg-config&quot;
+</code></pre>
+
+<p>The most important bits here are the <em>GOPATH</em> and <em>GOBIN</em>.  Depending on the
+version of go, and how/where it was installed, these values might need some
+tweaking.  Check the <a href="https://golang.org/doc/code.html#GOPATH">official go doc</a>
+for guidance.  If you are still struggling, feel free to send me a message.</p>
+
+<h2 id="to-be-continued">To be continued</h2>
+
+<p>That&rsquo;s the end for now, but not the end of our story.  I&rsquo;ll put links here to the
+other parts of <em>go tool</em> as I write them.</p>
+
+<p>Happy Coding!
+C$</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Shaleep &ndash;&gt;  Not too shallow whilst not oppressively deep. But seriously, what do you call something that is neither shallow nor deep?
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2017 - 2018  Caleb Harper - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+  <div class="container">
+    Built using <a rel="Hugo" href="http://gohugo.io">Hugo</a>
+  </div>
+  <div class="container">
+    with a modified <a rel="base16" 
+      href="https://github.com/htdvisser/hugo-base16-theme">
+      Base 16 Theme</a>
+</footer>
+
+</body>
+</html>
+
