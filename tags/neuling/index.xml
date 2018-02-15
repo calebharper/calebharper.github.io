@@ -6,10 +6,26 @@
     <description>Recent content in Neuling on Caleb Harper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Feb 2018 12:09:57 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 15 Feb 2018 12:53:24 -0600</lastBuildDate>
     
 	<atom:link href="https://calebharper.github.io/tags/neuling/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gobuild 1</title>
+      <link>https://calebharper.github.io/posts/go-build-first-part/</link>
+      <pubDate>Thu, 15 Feb 2018 12:53:24 -0600</pubDate>
+      
+      <guid>https://calebharper.github.io/posts/go-build-first-part/</guid>
+      <description>&lt;p&gt;So we&amp;rsquo;re not holding any punches.  Rather we&amp;rsquo;re going to dive right into the go
+tooling and look at &lt;em&gt;go build&lt;/em&gt;.  I will caveat, however, that &lt;em&gt;go build&lt;/em&gt; is
+quite a beefy tool.  Just get to a command line and run &lt;em&gt;go build &amp;ndash;help&lt;/em&gt;.
+Yowza!  But don&amp;rsquo;t be intimidated!  We&amp;rsquo;ll look at all of the options, but not
+all at once.  We&amp;rsquo;ll chunk this command up into two parts to make them more digestible.  This
+is the first part, and should cover most of your goings with &lt;em&gt;go build&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Gotool</title>
@@ -20,7 +36,7 @@
       <description>&lt;p&gt;The old adage is &amp;ldquo;a poor craftsman blames his/her tools.&amp;rdquo;  The golang tools
 should never suffer such defacements; they are simply sublime.  However, even
 the fanciest (or for that matter simplest) hammer can mash a finger if used
-improperly&lt;/p&gt;
+improperly.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

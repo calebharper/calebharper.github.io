@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Caleb Harper</title>
-    <link>https://calebharper.github.io/tags/go/</link>
-    <description>Recent content in Go on Caleb Harper</description>
+    <title>Build on Caleb Harper</title>
+    <link>https://calebharper.github.io/tags/build/</link>
+    <description>Recent content in Build on Caleb Harper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Feb 2018 12:53:24 -0600</lastBuildDate>
     
-	<atom:link href="https://calebharper.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://calebharper.github.io/tags/build/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -23,20 +23,6 @@ quite a beefy tool.  Just get to a command line and run &lt;em&gt;go build &amp;
 Yowza!  But don&amp;rsquo;t be intimidated!  We&amp;rsquo;ll look at all of the options, but not
 all at once.  We&amp;rsquo;ll chunk this command up into two parts to make them more digestible.  This
 is the first part, and should cover most of your goings with &lt;em&gt;go build&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Gotool</title>
-      <link>https://calebharper.github.io/posts/go-tool-introduction-/</link>
-      <pubDate>Sun, 04 Feb 2018 12:09:57 -0600</pubDate>
-      
-      <guid>https://calebharper.github.io/posts/go-tool-introduction-/</guid>
-      <description>&lt;p&gt;The old adage is &amp;ldquo;a poor craftsman blames his/her tools.&amp;rdquo;  The golang tools
-should never suffer such defacements; they are simply sublime.  However, even
-the fanciest (or for that matter simplest) hammer can mash a finger if used
-improperly.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

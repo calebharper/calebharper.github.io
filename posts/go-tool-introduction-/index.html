@@ -104,7 +104,7 @@
     <p>The old adage is &ldquo;a poor craftsman blames his/her tools.&rdquo;  The golang tools
 should never suffer such defacements; they are simply sublime.  However, even
 the fanciest (or for that matter simplest) hammer can mash a finger if used
-improperly</p>
+improperly.</p>
 
 <p></p>
 
@@ -132,9 +132,8 @@ cloud as a service (or whatever it is kids these days are doing).  But let&rsquo
 pause for just a second and reflect.  Open up your terminal, and type <em>go
 version</em>.  My output is below, yours will likely vary from mine:</p>
 
-<pre><code class="language-sh">$ go version
-go version go1.9.2 linux/amd64
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go version
+go version go1.9.2 linux/amd64</code></pre></div>
 
 <p>Does this command work?  Is it the version you expected?  Once we&rsquo;ve done
 something, it&rsquo;s usually worth checking we actually did what we meant to do. (or
@@ -143,34 +142,33 @@ done-did-do as I like to put it)</p>
 <h2 id="go-env">go env</h2>
 
 <p>The next command to look at is <em>go env</em>.  It isn&rsquo;t as flashy as some of the
-other go tools, important nonetheless.  It lets you know exactly how your go
-installation is configured.  Again mine is below, yours will likely vary</p>
+other go tools, but important nonetheless.  It lets you know exactly how your
+go installation is configured.  Again mine is below, yours will likely vary.</p>
 
-<pre><code class="language-sh">$ go env
-GOARCH=&quot;amd64&quot;
-GOBIN=&quot;/home/harpercn/devel/go/bin&quot;
-GOEXE=&quot;&quot;
-GOHOSTARCH=&quot;amd64&quot;
-GOHOSTOS=&quot;linux&quot;
-GOOS=&quot;linux&quot;
-GOPATH=&quot;/home/harpercn/devel/go&quot;
-GORACE=&quot;&quot;
-GOROOT=&quot;/opt/go&quot;
-GOTOOLDIR=&quot;/opt/go/pkg/tool/linux_amd64&quot;
-GCCGO=&quot;gccgo&quot;
-CC=&quot;gcc&quot;
-GOGCCFLAGS=&quot;-fPIC -m64 -pthread -fmessage-length=0
--fdebug-prefix-map=/tmp/go-build737507707=/tmp/go-build
--gno-record-gcc-switches&quot;
-CXX=&quot;g++&quot;
-CGO_ENABLED=&quot;1&quot;
-CGO_CFLAGS=&quot;-g -O2&quot;
-CGO_CPPFLAGS=&quot;&quot;
-CGO_CXXFLAGS=&quot;-g -O2&quot;
-CGO_FFLAGS=&quot;-g -O2&quot;
-CGO_LDFLAGS=&quot;-g -O2&quot;
-PKG_CONFIG=&quot;pkg-config&quot;
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go env
+GOARCH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;amd64&#34;</span>
+GOBIN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/harpercn/devel/go/bin&#34;</span>
+GOEXE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+GOHOSTARCH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;amd64&#34;</span>
+GOHOSTOS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;linux&#34;</span>
+GOOS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;linux&#34;</span>
+GOPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/harpercn/devel/go&#34;</span>
+GORACE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+GOROOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt/go&#34;</span>
+GOTOOLDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt/go/pkg/tool/linux_amd64&#34;</span>
+GCCGO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gccgo&#34;</span>
+CC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gcc&#34;</span>
+GOGCCFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-fPIC -m64 -pthread -fmessage-length=0
+</span><span style="color:#e6db74">-fdebug-prefix-map=/tmp/go-build737507707=/tmp/go-build
+</span><span style="color:#e6db74">-gno-record-gcc-switches&#34;</span>
+CXX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;g++&#34;</span>
+CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>
+CGO_CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-g -O2&#34;</span>
+CGO_CPPFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+CGO_CXXFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-g -O2&#34;</span>
+CGO_FFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-g -O2&#34;</span>
+CGO_LDFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-g -O2&#34;</span>
+PKG_CONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pkg-config&#34;</span></code></pre></div>
 
 <p>The most important bits here are the <em>GOPATH</em> and <em>GOBIN</em>.  Depending on the
 version of go, and how/where it was installed, these values might need some
@@ -181,6 +179,8 @@ for guidance.  If you are still struggling, feel free to send me a message.</p>
 
 <p>That&rsquo;s the end for now, but not the end of our story.  I&rsquo;ll put links here to the
 other parts of <em>go tool</em> as I write them.</p>
+
+<p><a href="https://calebharper.github.io/posts/go-build-first-part/">go build first part</a></p>
 
 <p>Happy Coding!
 C$</p>

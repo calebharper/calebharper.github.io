@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Calebs doings and dontings">
+<meta name="keywords" content="Go, Code, Tutorial">
+<meta name="author" content="Caleb Harper">
+<meta name="generator" content="Hugo 0.33-DEV" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://calebharper.github.io/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="https://calebharper.github.io/index.xml" type="application/rss+xml" title="Caleb Harper">
+<title>Gobuild 1 - Caleb Harper</title>
+</head>
+<body>
+
+<header>
+  <nav class="fixed-nav-bar">
+      <div class="container clearfix">
+        <a class="path" href="https://calebharper.github.io/">[Caleb Harper]</a>
+        <div class="right">
+          
+            
+              
+                <a class="path" 
+                  href="/pages/about/"
+                  >
+                  About</a>
+            
+          
+            
+              |
+                <a class="path" 
+                  href="/pages/contact/"
+                  >
+                  Contact</a>
+            
+          
+            
+              |
+                <a class="path" 
+                  href="/pages/faq/"
+                  >
+                  FAQ</a>
+            
+          
+            
+          
+            
+              |
+                <a class="path" 
+                  href="/pages/resume/"
+                  >
+                  Resume</a>
+            
+          
+        
+         
+           |
+           <a class="path"
+              href="https://calebharper.github.io/categories/blog">
+             Blog</a>
+          
+        
+        </div>
+      </div>
+  </nav>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2018-02-15">February 15, 2018</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="https://calebharper.github.io/categories/blog">blog</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="https://calebharper.github.io/tags/neuling">neuling</a>
+
+        <a href="https://calebharper.github.io/tags/go">go</a>
+
+        <a href="https://calebharper.github.io/tags/build">build</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">Gobuild 1</h1>
+  <section class="body" itemprop="articleBody">
+    <p>So we&rsquo;re not holding any punches.  Rather we&rsquo;re going to dive right into the go
+tooling and look at <em>go build</em>.  I will caveat, however, that <em>go build</em> is
+quite a beefy tool.  Just get to a command line and run <em>go build &ndash;help</em>.
+Yowza!  But don&rsquo;t be intimidated!  We&rsquo;ll look at all of the options, but not
+all at once.  We&rsquo;ll chunk this command up into two parts to make them more digestible.  This
+is the first part, and should cover most of your goings with <em>go build</em></p>
+
+<p></p>
+
+<h2 id="hello-world">Hello World</h2>
+
+<p>To demonstrate the build tool it would be nice to build something&hellip;  The beginning seems
+like a good place to start:  If you read my <a href="https://calebharper.github.io/posts/a-brief-dive-into-helloworld/">Hello World</a> post, you might recall that <em>Hello World</em> (aka
+Hellow) is an excellent place to begin.  The &lsquo;official&rsquo; go Hellow, as found in
+<a href="https://gopl.io">The Go Programming Language</a>:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Copyright © 2016 Alan A. A. Donovan &amp; Brian W. Kernighan.
+</span><span style="color:#75715e">// License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+</span><span style="color:#75715e"></span> 
+<span style="color:#75715e">// See page 1.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Helloworld is our first Go program.
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+ 
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, 世界&#34;</span>)
+}</code></pre></div>
+
+<p>So spin up your favorite editor, hammer in hellow, save it in a folder as
+<em>main.go</em>, and pull up a command prompt.  Oh, and make sure you are working
+under
+your <em>GOPATH/src</em> directory.  See my <a href="https://calebharper.github.io/posts/go-tool-introduction-/">previous post</a> or the
+<a href="https://golang.org/doc/code.html#GOPATH">official go doc</a> for guidance.  And
+trust me, don&rsquo;t try to fight the <em>GOPATH</em>.  I know it might feel constraining,
+but I&rsquo;ve found the constraints to be &hellip;liberating.  So just roll with it for a
+while, you might actually like it.</p>
+
+<h2 id="just-build">Just Build</h2>
+
+<p>If all you want is an executable or a library, just call <em>go build</em>.  If your program is
+valid, build will spit it out.  The executable will be named after
+the folder where your code resides.  This is a reflection of <a href="https://golang.org/doc/code.html#PackageNames">go&rsquo;s packaging
+expectations</a>.  Now let&rsquo;s
+explore some build flags!</p>
+
+<h2 id="v">-v</h2>
+
+<p>The <em>-v</em> flag is the old standby for <em>verbose</em>.  Every command line tool should
+have a <em>-v</em> flag!  It just provides more information about the tool&rsquo;s
+machinations.  For <em>go build</em> it prints out the names of the packages being
+built.  For our Hellow example, the output should be something like this:</p>
+
+<pre><code class="language-sh">$ go build -v
+hellow
+</code></pre>
+
+<h2 id="a">-a</h2>
+
+<p>The <em>-a</em> flag forces rebuilding all packages, even those that are already up to
+date.  I&rsquo;m not really sure about it&rsquo;s usefulness.  Maybe as a sanity check
+(did my updates REALLY get built???), total build time check, or
+maybe for a complete list of dependencies?  I don&rsquo;t know, do you have a
+compelling use case?<br />
+Regardless, we can see it&rsquo;s effect when teamed up with <em>-v</em></p>
+
+<pre><code class="language-sh">$ go build -v -a
+runtime/internal/sys
+runtime/internal/atomic
+runtime
+errors
+internal/race
+sync/atomic
+internal/cpu
+unicode/utf8
+unicode
+sync
+math
+io
+syscall
+strconv
+reflect
+time
+internal/poll
+os
+fmt
+hellow
+</code></pre>
+
+<p>As you can see, there are actually quite a few packages going into our simpy
+Hellow.</p>
+
+<h2 id="n">-n</h2>
+
+<p>The <em>-n</em> flag let&rsquo;s you look before you leap: It prints commands but doesn&rsquo;t
+execute them.  It also gives a peak behind the curtain like <em>-x</em>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go build -n
+
+<span style="color:#75715e">#
+</span><span style="color:#75715e"># hellow
+</span><span style="color:#75715e">#
+</span><span style="color:#75715e"></span>
+mkdir -p $WORK/hellow/_obj/
+mkdir -p $WORK/hellow/_obj/exe/
+cd /home/harpercn/devel/go/src/hellow
+/opt/go/pkg/tool/linux_amd64/compile -o $WORK/hellow.a -trimpath $WORK
+-goversion go1.9.2 -p main -complete -buildid
+ab46bfc350c11aa466e13db3f7a61b3bed81fce0 -D _/home/harpercn/devel/go/src/hellow
+-I $WORK -pack ./main.go
+cd .
+/opt/go/pkg/tool/linux_amd64/link -o $WORK/hellow/_obj/exe/a.out -L $WORK
+-extld<span style="color:#f92672">=</span>gcc -buildmode<span style="color:#f92672">=</span>exe -buildid<span style="color:#f92672">=</span>ab46bfc350c11aa466e13db3f7a61b3bed81fce0
+$WORK/hellow.a
+mv $WORK/hellow/_obj/exe/a.out hellow</code></pre></div>
+
+<p>I&rsquo;m sorry if exposing the inner workings ruin some of the build tool magic.
+We can see the <em>go build</em> recipe now.</p>
+
+<ul>
+<li>Make a temp directory.</li>
+<li>Change to the project folder.<br /></li>
+<li>Call the compiler. (<em>compile</em>)</li>
+<li>Call the linker. (<em>link</em>)</li>
+<li>Move the executable from the temp directory to the project folder</li>
+</ul>
+
+<p>If you are following along at home, your output may vary (especially if you
+have a different OS), but the gist will be the same.</p>
+
+<h2 id="x">-x</h2>
+
+<p>The <em>-x</em> flag is similar to <em>-n</em>:  It prints the commands the build tool will
+run.  However, unlike <em>-n</em> it also executes them.</p>
+
+<pre><code class="language-sh">$ go build -x
+WORK=/tmp/go-build156488403
+mkdir -p $WORK/hellow/_obj/
+mkdir -p $WORK/hellow/_obj/exe/
+cd /home/harpercn/devel/go/src/hellow
+/opt/go/pkg/tool/linux_amd64/compile -o $WORK/hellow.a -trimpath $WORK
+-goversion go1.9.2 -p main -complete -buildid
+ab46bfc350c11aa466e13db3f7a61b3bed81fce0 -D _/home/harpercn/devel/go/src/hellow
+-I $WORK -pack ./main.go
+cd .
+/opt/go/pkg/tool/linux_amd64/link -o $WORK/hellow/_obj/exe/a.out -L $WORK
+-extld=gcc -buildmode=exe -buildid=ab46bfc350c11aa466e13db3f7a61b3bed81fce0
+$WORK/hellow.a
+mv $WORK/hellow/_obj/exe/a.out hellow
+</code></pre>
+
+<p>One interesting difference:
+The <em>-x</em> command shows the definition for <em>$WORK</em> whereas <em>-n</em> does not.  I&rsquo;m
+not sure if omitting <em>$WORK</em> from the <em>-n</em> flag was a design decision or just an
+oversight.</p>
+
+<h2 id="p-n">-p n</h2>
+
+<p>The <em>-p</em> flag tells the build process how many processi<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> can be ran in
+parallel.  It defaults to the number of CPU cores, which seems like a pretty
+reasonable setting.  I rebuilt the (hugo)[<a href="https://hugo.io">https://hugo.io</a>] library with <em>-p 1</em>
+and <em>-p 6</em>.  The latter is an appreciably faster build.</p>
+
+<h2 id="compiler-name">-compiler name</h2>
+
+<p>Yes, that&rsquo;s right!  You get your choice of compiler! Sort of.  There are two
+options <em>gc</em> and <em>gccgo</em>.</p>
+
+<ul>
+<li><em>gc</em>: The default go compiler written in go for go.</li>
+<li><em>gccgo</em>: A frontend for gcc.<br /></li>
+</ul>
+
+<p>The <em>Reader&rsquo;s Digest</em> version:  <em>gc</em> will serve you well unless you need to
+target a non-mainstream (read neither <em>x86</em>, <em>ARM</em>, <em>PPC</em>, nor <em>MIPS</em>) processor or you need
+to squeeze out every ounce of performance.</p>
+
+<p>I&rsquo;ve actually never used the <em>gccgo</em> compiler.  When I invoke the command:</p>
+
+<pre><code class="language-sh">$ go build -compiler gccgo 
+go build: when using gccgo toolchain, please pass compiler flags using
+-gccgoflags, not -gcflags
+cmd/go: gccgo: exec: &quot;gccgo&quot;: executable file not found in $PATH
+</code></pre>
+
+<p>According to <a href="https://golang.org/doc/install/gccgo">Setting up and using gccgo</a>
+one might have to build <em>gccgo</em> or find a binary to download.  I don&rsquo;t have a
+compelling use case for <em>gccgo</em> so I haven&rsquo;t messed with it.  If you have, I&rsquo;d
+love to hear about it!</p>
+
+<h2 id="tags">-tags</h2>
+
+<p>Whew!  This is the last flag we&rsquo;ll talk about in this piece.  But tags are
+important and they crop up from time to time.</p>
+
+<p>In a nutshell, build tags are special comments that appear at the top of a
+source file.  They take the form:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  <span style="color:#75715e">// +build &lt; &lt;name&gt;  
+</span><span style="color:#75715e"></span>  </code></pre></div>
+
+<p>And these files will only be built if <em><name></em> is specified in the build tag.
+Let&rsquo;s try it out!  Add</p>
+
+<p><em>// +build foo</em></p>
+
+<p>To the top of your <em>main.go</em> file.  Now if we run a vanilla build command:</p>
+
+<pre><code class="language-sh">$ go build
+can't load package: package hellow: build constraints exclude all Go files in
+/home/harpercn/devel/go/src/hellow
+</code></pre>
+
+<p>Bummer!  Let&rsquo;s try it again with a <em>foo</em> build tag</p>
+
+<pre><code class="language-sh">go build -tags foo
+</code></pre>
+
+<p>This time no complaints!</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>This, I think, will cover the lion&rsquo;s share go building.  We&rsquo;ll explore
+some of the other flags when we visit <em>go build</em> again!</p>
+
+<p>Happy Coding,<br />
+C$</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Processi &ndash;&gt; &lsquo;cess&rsquo; should be pluralized &lsquo;i.&rsquo;  successi, abscessi, princessi, etc.<br />
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2017 - 2018  Caleb Harper - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+  <div class="container">
+    Built using <a rel="Hugo" href="http://gohugo.io">Hugo</a>
+  </div>
+  <div class="container">
+    with a modified <a rel="base16" 
+      href="https://github.com/htdvisser/hugo-base16-theme">
+      Base 16 Theme</a>
+</footer>
+
+</body>
+</html>
+
